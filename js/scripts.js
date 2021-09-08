@@ -12,23 +12,23 @@ document.getElementById("sliding-header-menu-close-button").onclick = function()
 
 // About us Tab
 
-var aboutUs = {
+let aboutUs = {
   "Mission": "Duis ac leo nisi. Mauris nec ex id lorem commodo rutrum rutrum a est. Cras facilisis sit amet lectus non posuere. Nullam non magna non enim blandit elementum.",
   "Vision": "Praesent ut lacinia neque, faucibus suscipit quam. Duis sed nunc rutrum, tempor mi at, euismod nibh.",
   "Values": "<ul><li>Nunc iaculis</li><li>Donec dictum fringilla</li><li>Duis convallis tortor ultrices</li><li>Curabitur in est lectus</li><li>Maecenas condimentum elit</li></ul>"
 };
 
-var unseletectedColor = "#646872";
-var seletectedColor = "#2A2D34";
+let unseletectedColor = "#646872";
+let seletectedColor = "#2A2D34";
 
-var aboutUsTabs = document.getElementsByClassName("single-tab");
+let aboutUsTabs = document.getElementsByClassName("single-tab");
 
-for (var a = 0; a < aboutUsTabs.length; a++) {
+for (let a = 0; a < aboutUsTabs.length; a++) {
   aboutUsTabs[a].onclick = function() {
-    var clickedValue = this.innerHTML;
+    let clickedValue = this.innerHTML;
     document.getElementById("box-text").innerHTML = aboutUs[clickedValue];
 
-    for (var b = 0; b < aboutUsTabs.length; b++) {
+    for (let b = 0; b < aboutUsTabs.length; b++) {
       aboutUsTabs[b].style["background-color"] = unseletectedColor;
       aboutUsTabs[b].style["font-weight"] = "normal";
     }
@@ -44,7 +44,7 @@ for (var a = 0; a < aboutUsTabs.length; a++) {
 
 // Service slider
 
-var ourServices = [
+let ourServices = [
   {
     'title': 'Web design',
     'text': 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent finibus tincidunt sem non sodales. Nunc et quam in magna vehicula sollicitudin. Aliquam erat volutpat. Maecenas dolor mi, aliquet ac quam aliquet, condimentum dictum nisi.'
@@ -62,12 +62,12 @@ var ourServices = [
   
 ];
 
-var previousArrow = document.getElementById("service-previous");
-var nextArrow = document.getElementById("service-next");
-var serviceTitleArea = document.getElementById("service-title");
-var serviceTextArea = document.getElementById("service-text");
+let previousArrow = document.getElementById("service-previous");
+let nextArrow = document.getElementById("service-next");
+let serviceTitleArea = document.getElementById("service-title");
+let serviceTextArea = document.getElementById("service-text");
 
-var currentService = 0;
+let currentService = 0;
 
 nextArrow.onclick = function() {
   if (currentService == (ourServices.length - 1)) {
@@ -75,8 +75,8 @@ nextArrow.onclick = function() {
   } else {
     currentService += 1;
   }
-  var title = ourServices[currentService].title;
-  var text = ourServices[currentService].text;
+  let title = ourServices[currentService].title;
+  let text = ourServices[currentService].text;
   serviceTitleArea.innerHTML = title;
   serviceTextArea.innerHTML = text;
 }
@@ -88,8 +88,8 @@ previousArrow.onclick = function() {
     currentService -= 1;
   }
   
-  var title = ourServices[currentService].title;
-  var text = ourServices[currentService].text;
+  let title = ourServices[currentService].title;
+  let text = ourServices[currentService].text;
   serviceTitleArea.innerHTML = title;
   serviceTextArea.innerHTML = text;
 }
